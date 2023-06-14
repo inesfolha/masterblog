@@ -25,3 +25,12 @@ h1 {
 .post p {
     margin: 10px 0;
 }
+
+.button-group {
+    display: inline-block;
+}
+
+.button-group form {
+    display: inline;
+    margin-right: 10px;
+}

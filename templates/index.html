@@ -14,11 +14,20 @@
             <h2>{{post['title']}}</h2>
             <p><em>{{post['author']}}</em></p>
             <p>{{post['content']}}</p>
+        <div class="button-group">
             <form method="POST" action="/delete/{{ post['id'] }}">
                 <button type="submit">Delete</button>
             </form>
+            <form method="GET" action="{{ url_for('update', post_id=post['id']) }}">
+                <button type="submit">Update</button>
+            </form>
+            <form method="POST" action="{{ url_for('like', post_id=post['id']) }}">
+            <button type="submit">Like ({{ post['likes'] }})</button>
+            </form>
+        </div>
+
     </div>
-{% endfor %}
+    {% endfor %}
   <div class="post">
         <form method="GET" action="{{ url_for('add') }}">
             <button type="submit">Add a New Post</button>
