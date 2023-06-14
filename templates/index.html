@@ -14,8 +14,15 @@
             <h2>{{post['title']}}</h2>
             <p><em>{{post['author']}}</em></p>
             <p>{{post['content']}}</p>
+            <form method="POST" action="/delete/{{ post['id'] }}">
+                <button type="submit">Delete</button>
+            </form>
     </div>
 {% endfor %}
- <div class="post"> <a href="{{ url_for('add') }}">Add a New Post</a> </div>
+  <div class="post">
+        <form method="GET" action="{{ url_for('add') }}">
+            <button type="submit">Add a New Post</button>
+        </form>
+    </div>
 </body>
 </html>

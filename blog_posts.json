@@ -1,1 +1,1 @@
-[{"id": 1, "author": "John Doe", "title": "First Post", "content": "This is my first post."}, {"id": 2, "author": "Jane Doe", "title": "Second Post", "content": "This is another post."}, {"author": "leaf", "title": "my first post", "content": "Hi!"}]
+[{"id": "672fbf99-ace6-40fb-beb4-008cd72a1a67", "author": "ines", "title": "first post with unique id", "content": "this is the fist post using a uuid"}]
