@@ -6,17 +6,26 @@ app = Flask(__name__)
 
 
 def id_generator():
+    """Generates a unique ID using UUID."""
     return str(uuid.uuid4())
 
 
 @app.route('/')
 def index():
+    """Renders the index.html template with blog posts."""
     blog_posts = file_handler.load_file('blog_posts.json')
     return render_template('index.html', posts=blog_posts)
 
 
 @app.route('/add', methods=['GET', 'POST'])
 def add():
+    """
+    Handles the addition of a new blog post.
+
+    If the request method is POST, processes the form data and adds a new post to the 'blog_posts.json' file.
+    After adding the post, redirects to the index page
+    If the request method is GET, renders the add.html template.
+    """
     if request.method == 'POST':
         author = request.form.get('author')
         title = request.form.get('title')
@@ -40,6 +49,12 @@ def add():
 
 @app.route('/delete/<string:post_id>', methods=['GET', 'POST'])
 def delete(post_id):
+    """
+    Handles the deletion of a blog post.
+
+    If the request method is POST, deletes the post with the given post_id from the 'blog_posts.json' file.
+    After deleting the post, redirects to the index page.
+    """
     blog_posts = file_handler.load_file('blog_posts.json')
     post_to_delete = None
     for post in blog_posts:
@@ -55,7 +70,13 @@ def delete(post_id):
 
 @app.route('/update/<string:post_id>', methods=['GET', 'POST'])
 def update(post_id):
+    """
+    Handles the updating of a blog post.
 
+    If the request method is POST, update the post with the given post_id in the 'blog_posts.json' file.
+    After updating the post, redirects to the index page
+    If the request method is GET, renders the update.html template with the post details.
+    """
     blog_posts = file_handler.load_file('blog_posts.json')
     post_to_update = None
     for post in blog_posts:
@@ -66,7 +87,6 @@ def update(post_id):
         return "Post not found", 404
 
     if request.method == 'POST':
-
         updated_author = request.form['author']
         updated_title = request.form['title']
         updated_content = request.form['content']
@@ -83,6 +103,12 @@ def update(post_id):
 
 @app.route('/like/<string:post_id>', methods=['POST'])
 def like(post_id):
+    """
+    Handles the increment of likes for a blog post.
+
+    Increments the 'likes' count for the post with the given post_id in the 'blog_posts.json' file.
+    Redirects to the index page after incrementing the likes count.
+    """
     blog_posts = file_handler.load_file('blog_posts.json')
     for post in blog_posts:
         if post['id'] == post_id:
@@ -93,6 +119,12 @@ def like(post_id):
             break
     file_handler.save_file('blog_posts.json', blog_posts)
     return redirect(url_for('index'))
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+    """Renders the 404.html template """
+    return render_template('404.html'), 404
 
 
 if __name__ == '__main__':
