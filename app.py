@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import uuid
-from masterblog.static import file_handler
+from static import file_handler
 
 app = Flask(__name__)
 
