@@ -36,6 +36,7 @@ The user interface is entirely built using HTML and css and the rest o relies en
 | /update/<string:post_id> | GET, POST |      Handles the updating of a blog post.       |
 | /like/<string:post_id>   |   POST    | Handles the increment of likes for a blog post. |
 | 404                      |    GET    | Renders the 404.html template in case of error  |
+
 [Back to the Top](#top)
 ## Installation
 
