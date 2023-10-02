@@ -1,4 +1,5 @@
 # MasterBlog
+<p id="top"></p>
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -10,7 +11,7 @@
 4. [Usage](#usage)
 5. [Limitations](#limitations)
 
-<div id="top"></div>
+
 
 ## Introduction                                     
 Welcome to MasterBlog, a simple web app to create, read, update and delete blog posts (CRUD).
