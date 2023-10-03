@@ -18,9 +18,11 @@ Welcome to MasterBlog, a simple web app to create, read, update and delete blog 
 
 This project was developed as a training exercise after my first deep dive into the Flask framework. 
 
-MasterBlog uses a simple JSON file as storage for all blog posts data and allows you to add new posts, update existing ones and deleting any unwanted post via our customized user interface. You can also add likes to any post without any limitations.
+MasterBlog uses a simple [JSON](https://github.com/inesfolha/masterblog/blob/main/blog_posts.json) file as storage for all blog posts data and allows you to add new posts, update existing ones and deleting any unwanted post via our customized user interface. You can also add likes to any post without any limitations.
 
-The user interface is entirely built using HTML and css and the rest o relies entirely on python and the Flask framework. 
+The user interface is entirely built using [HTML](https://github.com/inesfolha/masterblog/tree/main/templates) and [CSS](https://github.com/inesfolha/masterblog/blob/main/static/style.css) and the rest relies entirely on python and the Flask framework. 
+
+This project utilizes HTML templates with Jinja2 templating to dynamically change and render information from Flask routes.
 
 [Back to the Top](#top)
 
