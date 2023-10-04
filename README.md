@@ -8,7 +8,7 @@
 3. [Installation](#installation)
    - [Prerequisites](#prerequisites)
    - [Installation Steps](#installation-steps)
-4. [Usage](#usage)
+4. [How does it work?](#how-does-it-work)
 5. [Limitations](#limitations)
 6. [Contributions](#contributions)
 
@@ -76,7 +76,7 @@ http://127.0.0.1:5000/
 
 [Back to the Top](#top)
 
-### Usage
+### How does it work?
  * [Watch Demo](https://www.youtube.com/watch?v=YFz7mqcHktY)
 
 
